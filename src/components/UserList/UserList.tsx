@@ -6,18 +6,19 @@ import { IUser, loadUsers, selectUser } from '../../store/userSlice';
 
 export const UserList = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { users } = useSelector((state: RootState) => state.users);
+  const { users, isLoading } = useSelector((state: RootState) => state.users);
 
   useEffect(() => {
     dispatch(loadUsers());
   }, [dispatch]);
 
-  const rowRenderer = ({ index }: { index: number }) => {
+  const rowRenderer = ({ index, key, style }: { index: number; key: string; style: React.CSSProperties }) => {
     const user: IUser = users[index];
     return (
       <div
+        key={key} 
+        style={style}
         className=""
-        key={user.id}
         onClick={() => dispatch(selectUser(user))}
       >
         <div>{user.name}</div>
@@ -25,19 +26,24 @@ export const UserList = () => {
     );
   };
 
+  if (isLoading) {
+    return (<>Loading...</>)
+  }
+
   return (
     <div style={{ height: '100%', width: '100%' }}>
       <AutoSizer>
-      {({height, width}) => (
-        <List
-          height={height}
-          rowCount={users.length}
-          rowHeight={20}
-          rowRenderer={rowRenderer}
-          width={width}
-        />
-      )}
-    </AutoSizer>
+        {({ height, width }) => (
+          <List
+            height={height}
+            rowCount={users.length}
+            rowHeight={40} 
+            rowRenderer={rowRenderer}
+            width={width}
+            overscanRowCount={50} 
+          />
+        )}
+      </AutoSizer>
     </div>
   );
 };
