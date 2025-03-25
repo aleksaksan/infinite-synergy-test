@@ -1,0 +1,33 @@
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper {
+  margin-left: 50px;
+}
+
+form>input {
+  display: block;
+  width: 50%;
+}
+
+form img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.form-string {
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+}
+
+.form-string>.grid {
+  grid-template-columns: 1fr 2fr;
+  text-align: left; 
+}

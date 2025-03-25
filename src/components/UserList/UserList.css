@@ -1,0 +1,13 @@
+.user-list-item {
+  cursor: pointer;
+  
+}
+
+.user-list-item>svg {
+  margin-right: 20px;
+  fill: darkblue;
+}
+
+.user-list-item.selected {
+  background-color: aqua;
+}

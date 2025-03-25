@@ -13,7 +13,7 @@ interface UsersState {
   users: IUser[];
   isLoading: boolean;
   error: string | null;
-  selectedUser: IUser | null;
+  selectedUser?: IUser | null;
 };
 
 const initialState: UsersState = {
