@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https://alekasn.github.io/infinite-synergy-test/",
+  "homepage": "https://aleksaksan.github.io/infinite-synergy-test/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@types/react-virtualized": "^9.22.2",
