@@ -7,7 +7,6 @@ import { EditUserForm } from './components/Form/Form';
 
 function App() {
   
-
   return (
     <Provider store={store}>
       <div className="App flex">
